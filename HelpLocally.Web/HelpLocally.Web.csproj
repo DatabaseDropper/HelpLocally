@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\HelpLocally.Application.csproj" />
+      <ProjectReference Include="..\HelpLocally.Application\HelpLocally.Application.csproj" />
       <ProjectReference Include="..\HelpLocally.Common\HelpLocally.Common.csproj" />
       <ProjectReference Include="..\HelpLocally.Infrastructure\HelpLocally.Infrastructure.csproj" />
     </ItemGroup>

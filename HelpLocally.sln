@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		docker-compose.dev.yml = docker-compose.dev.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpLocally.Application", "Application\HelpLocally.Application.csproj", "{3E971988-5172-4126-BB03-74373716D9DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpLocally.Application", "HelpLocally.Application\HelpLocally.Application.csproj", "{3E971988-5172-4126-BB03-74373716D9DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpLocally.Common", "HelpLocally.Common\HelpLocally.Common.csproj", "{9AC93938-3453-4CDD-B814-A8E62B7AC5E2}"
 EndProject
