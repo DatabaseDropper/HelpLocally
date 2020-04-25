@@ -1,0 +1,67 @@
+﻿@page
+@using HelpLocally.Common;
+@model HelpLocally.Web.Pages.Vouchers.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@foreach (var item in this.Model.Vouchers)
+{
+
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @if (this.User.IsInRole(Roles.Customer))
+                {
+                    <text>Nazwa Firmy</text> 
+                }
+                else
+                {
+                    <text>Login kupującego</text>
+                }
+            </th>
+            <th>
+                Dostępne środki
+            </th>
+            <th>
+                Oryginalna ilość środków
+            </th>
+            <th>
+                Data wygaśnięcia
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Vouchers)
+        {
+            <tr>
+                <td>
+                    @if (this.User.IsInRole(Roles.Customer))
+                    {
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.OwnerLogin)
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpirationDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

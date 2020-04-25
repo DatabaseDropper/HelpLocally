@@ -1,0 +1,89 @@
+﻿@using HelpLocally.Common;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HelpLocally.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">HelpLocally.Web</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            @if (this.User.IsInRole(Roles.Admin))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Offers/Index">Oferty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/OfferTypes/Index">Słownik Typów Ofert</a>
+                                </li>         
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Companies/Create">Załóż nową firmę</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Account/Register">Zarejestruj nowego klienta</a>
+                                </li>
+                            }
+                            else if (this.User.IsInRole(Roles.Company))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Vouchers/Index">Obsługiwane vouchery</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Offers/Index">Twoje oferty</a>
+                                </li>
+                            }
+                            else if (this.User.IsInRole(Roles.Customer))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Vouchers/Index">Twoje vouchery</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/Offers/Index">Oferty</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+                <div id="sign">
+                    @await Html.PartialAsync("_AccountInfo")
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - HelpLocally.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@page
+@model HelpLocally.Web.Pages.Account.SignInModel
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+@section Scripts
+{
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <input type="text" name="Login" class="form-control" placeholder="Your Login *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="password" name="Password" class="form-control" placeholder="Your Password *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btnSubmit" value="Login" />
+    </div>
+    <div class="form-group">
+        <a href="#" class="ForgetPwd">Forget Password?</a>
+    </div>
+</form>

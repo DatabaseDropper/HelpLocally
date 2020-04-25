@@ -1,0 +1,48 @@
+﻿@page
+@model HelpLocally.Web.Pages.Offers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Offer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Offer.Name" class="control-label"></label>
+                <input asp-for="Offer.Name" class="form-control" />
+                <span asp-validation-for="Offer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offer.Description" class="control-label"></label>
+                <input asp-for="Offer.Description" class="form-control" />
+                <span asp-validation-for="Offer.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Typ</label>
+                <select asp-for="Offer.TypeId" class ="form-control" asp-items="ViewBag.TypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offer.Price" class="control-label"></label>
+                <input asp-for="Offer.Price" class="form-control" />
+                <span asp-validation-for="Offer.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

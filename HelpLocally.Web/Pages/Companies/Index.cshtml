@@ -1,0 +1,9 @@
+@page
+@model IndexModel
+
+<ul>
+    @foreach (var item in Model.Companies)
+    {
+        <li>@item.Name</li>
+    }
+</ul>

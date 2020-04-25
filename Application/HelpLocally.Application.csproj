@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>HelpLocally.Application</RootNamespace>
+    <AssemblyName>HelpLocally.Application</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HelpLocally.Common\HelpLocally.Common.csproj" />
+    <ProjectReference Include="..\HelpLocally.Infrastructure\HelpLocally.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

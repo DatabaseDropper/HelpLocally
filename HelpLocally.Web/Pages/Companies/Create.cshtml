@@ -1,0 +1,30 @@
+﻿@page
+@model HelpLocally.Web.Pages.Companies.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Company</h1>
+
+<h1 class="bg-danger">@this.Model.Message</h1>
+
+<form method="post">
+    <div class="form-group">
+        <input type="text" name="Login" class="form-control" placeholder="Company owner Login *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="password" name="Password" class="form-control" placeholder="Company owner Password *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="Name" class="form-control" placeholder="Company Name *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="Nip" class="form-control" placeholder="Company NIP *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="BankAccountNumber" class="form-control" placeholder="Company BankAccountNumber *" value="" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btnSubmit" value="Login" />
+    </div>
+</form>
